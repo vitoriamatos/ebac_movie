@@ -32,6 +32,6 @@ exports.default = gulp.parallel(styles, images, scripts);
 
 exports.watch = function() {
 
-    gulp.watch('./scr/styles/*.scss', gulp.parallel(styles))
-    gulp.watch('./src/scripts/*.js', gulp.parallel(scripts))
+    gulp.watch('./scr/styles/*.scss', gulp.parallel(styles));
+    gulp.watch('./src/scripts/*.js', gulp.parallel(scripts));
 }
