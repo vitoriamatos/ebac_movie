@@ -21,9 +21,11 @@ function scripts(){
         .pipe(gulp.dest('./dist/js'));
 }
 
-exports.default = function() {
-    
-    gulp.watch('./src/styles/*.scss', {ignoreInitial: false}, gulp.series(styles));
-    gulp.watch('./src/images/*', {ignoreInitial: false}, gulp.series(images));
-    gulp.watch('./src/scripts/*.js', {ignoreInitial: false}, gulp.series(scripts));
+
+exports.default = gulp.parallel(styles, images, scripts);
+
+exports.watch = function() {
+
+    gulp.watch('./scr/styles/*.scss', gulp.parallel(styles));
+    gulp.watch('./src/scripts/*.js', gulp.parallel(scripts));
 }
